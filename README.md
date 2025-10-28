@@ -1,4 +1,4 @@
-# ⚙️ Predictive Maintenance for Industrial Machinery
+# Predictive Maintenance for Industrial Machinery
 
 This project leverages machine learning to predict equipment failure using sensor data from the NASA Turbofan Engine Degradation dataset. It simulates a complete data pipeline, from raw data ingestion into a SQL database to advanced analytics and visualization.
 
@@ -8,7 +8,7 @@ This project leverages machine learning to predict equipment failure using senso
 *   **Machine Learning:** Employs a Random Forest model to predict equipment failure.
 *   **Visualization:** Generates a CSV output for powerful insights in Tableau.
 
-## 🚀 Technologies Used
+## Technologies Used
 
 *   **Python:** The core programming language for scripting and machine learning.
 *   **Pandas:** Essential for efficient data manipulation and feature engineering.
