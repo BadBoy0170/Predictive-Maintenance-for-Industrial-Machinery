@@ -1,28 +1,48 @@
-# Project: Predictive Maintenance for Industrial Machinery
+# ⚙️ Predictive Maintenance for Industrial Machinery
 
-This project analyzes industrial sensor data from the NASA Turbofan Engine Degradation dataset to predict equipment failure using a Random Forest machine learning model.
+This project leverages machine learning to predict equipment failure using sensor data from the NASA Turbofan Engine Degradation dataset. It simulates a complete data pipeline, from raw data ingestion into a SQL database to advanced analytics and visualization.
 
-It simulates a real-world scenario by first loading raw data into a SQL database and then running an analytics script against that database. The final output is a CSV file ready for visualization in Tableau.
+**Key Features:**
+*   **Data Ingestion:** Loads and cleans raw sensor data into an SQLite database.
+*   **Feature Engineering:** Creates relevant features for predictive modeling.
+*   **Machine Learning:** Employs a Random Forest model to predict equipment failure.
+*   **Visualization:** Generates a CSV output for powerful insights in Tableau.
 
-**Technologies Used:**
-* **Python**
-* **Pandas:** For data manipulation and feature engineering
-* **SQLite:** To simulate a production database
-* **Scikit-learn:** For scaling data and building the Random Forest model
-* **Tableau:** For visualizing the results
+## 🚀 Technologies Used
+
+*   **Python:** The core programming language for scripting and machine learning.
+*   **Pandas:** Essential for efficient data manipulation and feature engineering.
+*   **SQLite:** Used to simulate a robust production-grade database.
+*   **Scikit-learn:** Provides tools for data scaling, model training, and evaluation.
+*   **Tableau:** For creating interactive and insightful data visualizations.
 
 ---
 
-## ⚙️ How to Run the Project
+## 📂 Project Structure
+
+```
+.
+├── engine_data.db
+├── Maintance Dashboard.twb
+├── maintenance_predictions.csv
+├── predict_failure.py
+├── README.md
+├── setup_database.py
+└── train_FD001.txt
+```
+
+---
+
+## 🛠️ How to Run the Project
 
 ### Step 1: Setup
 
 1.  **Download the Data:**
-    * Search for the "NASA Turbofan Engine Degradation dataset".
-    * From the downloaded ZIP file, find and copy `train_FD001.txt` into this project's directory.
+    *   Search for the "NASA Turbofan Engine Degradation dataset".
+    *   From the downloaded ZIP file, find and copy `train_FD001.txt` into this project's directory.
 
 2.  **Install Python Libraries:**
-    * Open your terminal in the project directory and run:
+    *   Open your terminal in the project directory and run:
     ```bash
     pip install pandas scikit-learn
     ```
@@ -33,18 +53,18 @@ It simulates a real-world scenario by first loading raw data into a SQL database
 You must run the scripts in order.
 
 1.  **Run the Data Pipeline:**
-    * This script loads `train_FD001.txt`, cleans it, and saves it to a database file.
+    *   This script loads `train_FD001.txt`, cleans it, and saves it to a database file.
     ```bash
     python setup_database.py
     ```
-    * You will see a new file named `engine_data.db` appear in your folder.
+    *   You will see a new file named `engine_data.db` appear in your folder.
 
 2.  **Run the Analytics:**
-    * This script reads from `engine_data.db`, engineers features, trains the model, and saves the predictions.
+    *   This script reads from `engine_data.db`, engineers features, trains the model, and saves the predictions.
     ```bash
     python predict_failure.py
     ```
-    * This will print a **Model Performance Report** to your terminal and create the `maintenance_predictions.csv` file.
+    *   This will print a **Model Performance Report** to your terminal and create the `maintenance_predictions.csv` file.
 
 ---
 
@@ -65,7 +85,7 @@ This dashboard tracks the health of a single engine over its lifespan.
 3.  Tableau will create two line charts. Right-click the axis and select **"Dual Axis"** to overlay them.
 4.  Drag `unit_number` (from "Dimensions") to the **Filters** card. Select a single unit (e.g., unit "3") to see its specific trend.
 
-
+![Equipment Health Monitoring Dashboard](Screenshot%202025-10-28%20at%2010.26.20%E2%80%AFPM.png)
 
 ### Dashboard 2: Failure Predictions
 
